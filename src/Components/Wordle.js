@@ -113,17 +113,22 @@ function App(props) {
     function handleNewGame()
     {   window.location.reload()
     }
-    return ( <main className='dark:bg-black bg-slate-50 h-full min-h-screen w-full p-10 opacity-95'>
+    return ( <main className='dark:bg-black bg-slate-50 h-full min-h-screen w-full p-1 sm:p-10 opacity-95'>
               <Navbar/>
               <hr className="absolute left-0 right-0 border-gray-500 dark:border-white"></hr>
               <Gameboard attempts={state.attempts} Answer={answer}/>
               <div className="flex flex-col">
-              {(!state.attempts.includes(answer)&&(state.attempts.length<6))&&<input type="text" className="self-center w-1/5 p-2 my-6 dark:border-white border-black border dark:bg-slate-800 bg-slate-50 dark:text-white text-slate-800" maxLength="5" placeholder="Enter Your Guess Here" value={state.word} onChange={handleChange} onKeyUp={(e) => handleEnter(e)}/>}
-              {(state.attempts.includes(answer)||(state.attempts.length>=6))&& <button className="bg-blue-500 self-center h-10 text-white rounded-md w-1/5 my-6" onClick={handleNewGame}>Play Again</button>}
+              {(!state.attempts.includes(answer)&&(state.attempts.length<6))&&<input type="text" className="self-center w-[175px] lg:w-1/5 p-2 my-3 text-md lg:text-xl dark:border-white border-black border dark:bg-slate-800 bg-slate-50 dark:text-white text-slate-800" maxLength="5" placeholder="Enter Your Guess Here" value={state.word} onChange={handleChange} onKeyUp={(e) => handleEnter(e)}/>}
+              {(state.attempts.includes(answer)||(state.attempts.length>=6))&& <button className="bg-blue-500 self-center h-10 text-white rounded-md sm:w-1/5 w-2/3 my-3" onClick={handleNewGame}>Play Again</button>}
               </div>
               <Keyboard attempts={state.attempts} Answer={answer} handleEvent={handleButton}/>
               <ToastContainer
-                className="mt-28"
+                className="mt-1 md:hidden"
+                toastClassName="mx-auto my-1 text-sm w-1/2"
+                limit={3}
+                newestOnTop={true}/>
+              <ToastContainer
+                className="mt-28 hidden md:block"
                 limit={5}
                 newestOnTop={true}/>
            </main>

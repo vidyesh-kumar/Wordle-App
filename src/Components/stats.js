@@ -59,25 +59,25 @@ function Statistics(props) {
     var winPerc =parseInt((wins/(wins+loses))*100)
     if(isNaN(winPerc))
         winPerc=0
-    return ( <div className="relative w-1/3 min-h-3/5 dark:bg-zinc-800 bg-gray-300 flex place-content-start flex-col p-5 rounded">
-                <h1 className="text-center text-xl font-bold mb-3">Statistics</h1>
+    return ( <div className="relative w-5/6 md:w-1/2 lg:w-1/3 min-h-4/5 dark:bg-zinc-800 bg-gray-300 flex place-content-start flex-col p-5 rounded">
+                <h1 className="text-center text-md lg:text-xl font-bold mb-3">Statistics</h1>
                 <i className="absolute top-5 right-5 fas fa-times" onClick={props.handleClick}></i>
-                <div className="flex flex-row w-full gap-7 place-content-center mb-4 mt-2">
+                <div className="flex flex-row w-full gap-4 lg:gap-7 place-content-center mb-4 mt-2">
                     <div className="flex flex-col items-center w-12">
-                        <h2 className="text-3xl">{wins+loses}</h2>
-                        <h4 className="text-center">Played</h4>
+                        <h2 className="text-lg lg:text-3xl">{wins+loses}</h2>
+                        <h4 className="text-center text-sm lg:text-xl">Played</h4>
                     </div>  
                     <div className="flex flex-col items-center w-12">
-                        <h2 className="text-3xl">{winPerc}</h2>
-                        <h4 className="text-center">Win %</h4>
+                        <h2 className="text-lg lg:text-3xl">{winPerc}</h2>
+                        <h4 className="text-center text-sm lg:text-xl">Win %</h4>
                     </div> 
                     <div className="flex flex-col items-center w-12">
-                        <h2 className="text-3xl">{streak}</h2>
-                        <h4 className="text-center">Current Streak</h4>
+                        <h2 className="text-lg lg:text-3xl">{streak}</h2>
+                        <h4 className="text-center text-sm lg:text-xl">Current Streak</h4>
                     </div>
                     <div className="flex flex-col items-center w-12">
-                        <h2 className="text-3xl">{MaxStreak}</h2>
-                        <h4 className="text-center">Max Streak</h4>
+                        <h2 className="text-lg lg:text-3xl">{MaxStreak}</h2>
+                        <h4 className="text-center text-sm lg:text-xl  ">Max Streak</h4>
                     </div>
                 </div>
                 <CChart

@@ -46,21 +46,21 @@ function Settings(props) {
             theme:theme
             });
     }
-    return ( <div className="relative w-1/3 min-h-3/5 dark:bg-zinc-800 bg-gray-300 flex place-content-start flex-col p-5 rounded">
-    <h1 className="text-center text-xl font-bold mb-3">Settings</h1>
+    return ( <div className="relative w-5/6 md:w-1/2 lg:w-1/3 min-h-3/5 dark:bg-zinc-800 bg-gray-300 flex place-content-start flex-col p-5 rounded">
+    <h1 className="text-center text-lg lg:text-xl font-bold mb-3">Settings</h1>
     <i className="absolute top-5 right-5 fas fa-times" onClick={props.handleClick}></i>
     <div className="flex flex-row place-content-between items-center w-full my-2">
-    <h1 className="text-center text-lg font-bold">Switch Theme :</h1>  
-    {darkMode && <button onClick={handleDarkMode} type="button" className="text-slate-800 bg-slate-50 w-1/5 self-end h-10 rounded-md">
+    <h1 className="text-center text-md lg:text-lg font-bold">Switch Theme :</h1>  
+    {darkMode && <button onClick={handleDarkMode} type="button" className="text-slate-800 text-md lg:text-lg bg-slate-50 w-1/3 lg:w-1/4 self-end h-10 rounded-md">
        Light  <i className="fas fa-sun text-slate-800 px-1"></i>
     </button>}
-    {!darkMode && <button onClick={handleDarkMode} type="button" className="text-white bg-black w-1/5 self-end h-10 rounded-md">
+    {!darkMode && <button onClick={handleDarkMode} type="button" className="text-white text-md lg:text-lg  bg-black w-1/3 lg:w-1/4 self-end h-10 rounded-md">
         Dark  <i class="fas fa-moon text-white px-1"></i>
     </button>}
     </div>
     <div className="flex flex-row place-content-between items-center w-full my-2">
-    <h1 className="text-center text-lg font-bold">Reset Stats :</h1> 
-    <button onClick={ResetStats} type="button" className="text-white dark:text-slate-800 dark:bg-slate-50  bg-black w-1/5 self-end h-10 rounded-md">
+    <h1 className="text-center text-md lg:text-lg font-bold">Reset Stats :</h1> 
+    <button onClick={ResetStats} type="button" className="text-white dark:text-slate-800 dark:bg-slate-50  bg-black w-1/3 lg:w-1/4 self-end h-10 rounded-md">
         Reset  <i class="fas fa-wrench text-white dark:text-slate-800 px-1"></i>
     </button>
     </div>

@@ -34,7 +34,6 @@ function App(props) {
                                         word:"",
                                         }))
                         toast.error('Word Not In Dictionary', {
-                        position: "top-right",
                         autoClose: 3000,
                         hideProgressBar: true,
                         closeOnClick: true,
@@ -47,7 +46,6 @@ function App(props) {
                 }
                 else
                     toast.warn('Please Use 5 Letter Word', {
-                        position: "top-right",
                         autoClose: 3000,
                         hideProgressBar: true,
                         closeOnClick: true,
@@ -74,10 +72,7 @@ function App(props) {
                                             word:"",
                                             }))
                         toast.error('Word Not In Dictionary', {
-                        position: "top-right",
-                        autoClose: 3000,
                         hideProgressBar: true,
-                        closeOnClick: true,
                         pauseOnHover: false,
                         draggable: true,
                         progress: undefined,
@@ -87,10 +82,7 @@ function App(props) {
                 }
                 else
                     toast.warn('Please Use 5 Letter Word', {
-                        position: "top-right",
-                        autoClose: 3000,
                         hideProgressBar: true,
-                        closeOnClick: true,
                         pauseOnHover: false,
                         draggable: true,
                         progress: undefined,
@@ -98,7 +90,7 @@ function App(props) {
                         });
             }
       }
-      else if(event.target.innerText==="Clear ")
+      else if(event.target.innerText.trim()==="Clear")
       {   newword = newword.slice(0,-1)
           setState((prev)=>({...prev,word:newword}))
       }
@@ -123,13 +115,29 @@ function App(props) {
               </div>
               <Keyboard attempts={state.attempts} Answer={answer} handleEvent={handleButton}/>
               <ToastContainer
-                className="mt-1 md:hidden"
-                toastClassName="mx-auto my-1 text-sm w-1/2"
+                autoClose={1000}
+                position='bottom-center'
+                className="md:hidden lg:hidden"
+                toastClassName="mx-auto text-sm w-1/2"
                 limit={3}
+                closeButton={false}
+                closeOnClick={false}
                 newestOnTop={true}/>
               <ToastContainer
-                className="mt-28 hidden md:block"
+                autoClose={2000}
+                position='bottom-center'
+                className="hidden md:block lg:hidden"
+                limit={3}
+                closeButton={false}
+                closeOnClick={false}
+                newestOnTop={true}/>
+            <ToastContainer
+                autoClose={3000}
+                position='top-right'
+                className="mt-28 hidden md:hidden lg:block"
                 limit={5}
+                closeButton={true}
+                closeOnClick={true}
                 newestOnTop={true}/>
            </main>
   );

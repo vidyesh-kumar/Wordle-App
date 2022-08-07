@@ -6,7 +6,6 @@ import upper from './Components/Data';
 
 const answer = upper[Math.floor(Math.random()*upper.length)]
 const root = ReactDOM.createRoot(document.getElementById('root'));
-console.log(answer)
 root.render(
     <App Answer={answer}/>
 );
